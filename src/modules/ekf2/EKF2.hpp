@@ -506,6 +506,9 @@ private:
 
 	float _last_gnss_hgt_bias_published{};
 
+	uint32_t _device_id_gnss{0}; ///< last selected receiver, receivers without a device_id excluded
+	uint8_t _gnss_selection_count{0};
+
 	uORB::Subscription _vehicle_gnss_sub{ORB_ID(vehicle_gnss)};
 
 	uORB::PublicationMulti<estimator_bias_s> _estimator_gnss_hgt_bias_pub{ORB_ID(estimator_gnss_hgt_bias)};
